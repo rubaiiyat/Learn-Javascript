@@ -1,6 +1,6 @@
 class Animal {
   sound() {
-    console.log("Make some noise");
+    console.log("They Make some noise");
   }
 }
 
@@ -17,7 +17,7 @@ class Cat extends Animal {
 }
 
 let dog = new Dog();
-dog.sound();
-
 let cat = new Cat();
+
+dog.sound();
 cat.sound();
