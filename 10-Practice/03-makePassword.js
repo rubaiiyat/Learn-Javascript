@@ -1,5 +1,16 @@
 function password(obj) {
-  if (obj.birthYear.length != 4) {
+  if (
+    !obj.name ||
+    !obj.birthYear ||
+    !obj.siteName ||
+    typeof obj.name != "string" ||
+    typeof obj.siteName != "string"
+  ) {
+    return "invalid";
+  }
+
+  let len = obj.birthYear.toString().length;
+  if (len != 4) {
     return "invalid";
   } else {
     let site = obj.siteName.charAt(0).toUpperCase();
@@ -15,4 +26,4 @@ function password(obj) {
   }
 }
 
-console.log(password({ name: "toky", birthYear: 200, siteName: "Facebook" }));
+console.log(password({ name: "maisha", birthYear: 2002 }));
