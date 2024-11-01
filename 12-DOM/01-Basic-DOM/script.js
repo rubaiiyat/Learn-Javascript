@@ -8,15 +8,20 @@ firstDiv.style.alignItems = "center";
 firstDiv.style.gap = "20px";
 firstDiv.style.textAlign = "start";
 firstDiv.style.marginTop = "50px";
-firstDiv.style.background = "gray";
-firstDiv.style.background = "#14181c";
-firstDiv.style.width = "600px";
 firstDiv.style.borderRadius = "20px";
 firstDiv.style.padding = "20px";
 firstDiv.style.margin = "auto";
+firstDiv.style.color = "black";
 
 const rockList = document.createElement("div");
 firstDiv.appendChild(rockList);
+
+const rockTitle = document.createElement("h1");
+rockTitle.innerText = "Rock Bands";
+rockList.appendChild(rockTitle);
+rockTitle.style.fontSize = "30px";
+rockTitle.style.color = "white";
+rockTitle.style.textDecoration = "underline";
 
 const rockBands = document.createElement("ul");
 rockBands.innerHTML = `
@@ -29,8 +34,19 @@ rockBands.innerHTML = `
 
 rockList.appendChild(rockBands);
 
+rockList.style.background = "#646EE4";
+rockList.style.padding = "10px";
+rockList.style.borderRadius = "10px";
+
 const metalList = document.createElement("div");
 firstDiv.appendChild(metalList);
+
+const metalTitle = document.createElement("h1");
+metalTitle.innerText = "Metal Bands";
+metalList.appendChild(metalTitle);
+metalTitle.style.fontSize = "30px";
+metalTitle.style.color = "white";
+metalTitle.style.textDecoration = "underline";
 
 const metalBand = document.createElement("ul");
 metalBand.innerHTML = `
@@ -41,10 +57,20 @@ metalBand.innerHTML = `
     <li>Iron Maiden</li>
 
 `;
-firstDiv.appendChild(metalBand);
+metalList.appendChild(metalBand);
+metalList.style.background = "#EF47BC";
+metalList.style.padding = "10px";
+metalList.style.borderRadius = "10px";
 
 const poplList = document.createElement("div");
 firstDiv.appendChild(poplList);
+
+const popTitle = document.createElement("h1");
+popTitle.innerText = "Pop Bands";
+poplList.appendChild(popTitle);
+popTitle.style.fontSize = "30px";
+popTitle.style.color = "white";
+popTitle.style.textDecoration = "underline";
 
 const popBand = document.createElement("ul");
 popBand.innerHTML = `
@@ -55,4 +81,8 @@ popBand.innerHTML = `
     <li>The Chainsmokers</li>
 
 `;
-firstDiv.appendChild(popBand);
+poplList.appendChild(popBand);
+
+poplList.style.background = "#00B29F";
+poplList.style.padding = "10px";
+poplList.style.borderRadius = "10px";
