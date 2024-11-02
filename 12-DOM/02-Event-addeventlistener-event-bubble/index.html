@@ -13,9 +13,80 @@
   </head>
   <body class="mainBody text-center mt-5">
     <h1 class="text-3xl text-info">Events</h1>
-    <button class="btn btn-primary" onclick="changeColor()">
+    <button class="randomColor btn" onclick="changeColor()">
       Set Random Color
     </button>
+
+    <div class="mt-10">
+      <p id="ourValue" class="text-4xl font-semibold text-white mb-5">1</p>
+      <div class="flex items-center justify-center space-x-4">
+        <button
+          class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+          id="decreaseID"
+        >
+          Decrease
+        </button>
+
+        <button
+          id="resetID"
+          class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+        >
+          Reset
+        </button>
+
+        <button
+          id="increaseID"
+          class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        >
+          Increase
+        </button>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-20 mt-10">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md w-full">
+        <h2 class="text-2xl font-semibold mb-4">Leave a Comment</h2>
+
+        <label
+          for="username"
+          class="block text-sm font-medium text-gray-300 mb-1"
+          >Your Name</label
+        >
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your name"
+          class="w-full p-2 mb-4 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500 text-gray-100"
+        />
+
+        <label
+          for="comment"
+          class="block text-sm font-medium text-gray-300 mb-1"
+          >Comment</label
+        >
+        <textarea
+          id="comment"
+          placeholder="Enter your comment"
+          class="w-full p-2 mb-4 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:border-blue-500 text-gray-100 h-28 resize-none"
+        ></textarea>
+
+        <button
+          type="button"
+          id="addCommentBtn"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition duration-300"
+        >
+          Post
+        </button>
+      </div>
+      <div class="text-start" id="addComment">
+        <h1 class="font-bold text-xl text-white">Abir Rubaiyat</h1>
+        <p class="text-sm">This is my comment</p>
+        <button class="text-error mb-10" id="deleteComment">
+          Delete Comment
+        </button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
