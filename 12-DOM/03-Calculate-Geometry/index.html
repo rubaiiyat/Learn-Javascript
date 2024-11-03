@@ -26,13 +26,30 @@
           <h2 class="card-title text-white">Triangle</h2>
           <p>Area (A) = 0.5 x b x h</p>
           <div class="flex gap-2">
-            <input type="text" name="" id="" class="w-14" />
+            <input
+              type="text"
+              name=""
+              id="base"
+              class="w-16 rounded"
+              placeholder="b"
+            />
             cm
-            <input type="text" name="" id="" class="w-14" />
+            <input
+              type="text"
+              name=""
+              id="height"
+              class="w-16 rounded"
+              placeholder="h"
+            />
             cm
           </div>
+          <p id="displayError">
+            Area (A) = <span id="displayValue">0</span> cm<sup>2</sup>
+          </p>
           <div class="card-action w-full">
-            <button class="btn btn-info w-full">Calculate</button>
+            <button id="triangleBtn" class="btn btn-info w-full">
+              Calculate
+            </button>
           </div>
         </div>
       </div>
@@ -44,13 +61,30 @@
           <h2 class="card-title text-white">Rectangle</h2>
           <p>Area (A) = w x l</p>
           <div class="flex gap-2">
-            <input type="text" name="" id="" class="w-14" />
+            <input
+              type="text"
+              name=""
+              id="width"
+              class="w-16 rounded"
+              placeholder="w"
+            />
             cm
-            <input type="text" name="" id="" class="w-14" />
+            <input
+              type="text"
+              name=""
+              id="length"
+              class="w-16 rounded"
+              placeholder="l"
+            />
             cm
           </div>
+          <p id="displayErrorRect">
+            Area (A) = <span id="displayValueRect">0</span> cm<sup>2</sup>
+          </p>
           <div class="card-action w-full">
-            <button class="btn btn-info w-full">Calculate</button>
+            <button id="rectangleBtn" class="btn btn-info w-full">
+              Calculate
+            </button>
           </div>
         </div>
       </div>
