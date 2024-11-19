@@ -5,10 +5,14 @@ function ourApi() {
 }
 
 ourApi();
-
+let showItemCount = 5;
 function displayData(data) {
   const totalFood = document.getElementById("totalFood");
   totalFood.innerText = data.length;
+  data = data.slice(0, showItemCount);
+
+  console.log(showItemCount);
+
   data.forEach((recipes) => {
     const price = Math.round(Math.random() * 15) + 5;
     const mainDiv = document.getElementById("mainDiv");
@@ -57,6 +61,16 @@ function displayData(data) {
     mainDiv.appendChild(newDiv);
   });
 }
+
+document
+  .getElementById("showMoreItemBtn")
+  .addEventListener("click", function () {
+    showItemCount += 5;
+
+    fetch("https://dummyjson.com/recipes")
+      .then((res) => res.json())
+      .then((data) => displayData(data.recipes));
+  });
 
 function showDetails(id) {
   fetch(`https://dummyjson.com/recipes/${id}`)
