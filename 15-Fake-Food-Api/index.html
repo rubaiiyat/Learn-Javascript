@@ -12,14 +12,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1 class="text-center text-3xl mt-5 font-bold">Our Food</h1>
+    <!--  <h1 class="text-center text-3xl mt-5 font-bold">Our Food</h1> -->
 
     <section id="mainSection">
       <h1 class="text-center text-2xl mt-5 font-bold mb-2">
         Total Foods: <span id="totalFood" class="text-accent"></span>
       </h1>
 
-      <form class="max-w-md mx-auto">
+      <!-- <form class="max-w-md mx-auto">
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -59,13 +59,61 @@
             Search
           </button>
         </div>
-      </form>
+      </form> -->
 
       <div
         id="mainDiv"
-        class="flex flex-wrap justify-center items-center gap-5"
+        class="flex flex-wrap justify-center items-center gap-10"
       ></div>
     </section>
+    <!-- Open the modal using ID.showModal() method -->
+
+    <div>
+      <!-- You can open the modal using ID.showModal() method -->
+
+      <dialog id="my_modal_4" class="modal">
+        <div id="modalDiv" class="modal-box w-11/12 max-w-5xl">
+          <div class="card lg:card-side bg-base-100">
+            <figure>
+              <img class="" id="myImg" src="" alt="Album" />
+            </figure>
+            <div class="card-body">
+              <h2 id="itemName" class="card-title text-white"></h2>
+              <p id="description" class=""></p>
+              <p class="text-white">
+                Rating: <span id="rating" class="text-gray-400"></span> (
+                <span id="review" class="text-gray-400"></span>
+                <span class="text-gray-400">reviews</span> )
+              </p>
+              <p class="text-white">
+                Category: <span id="tags" class="text-gray-400"></span>
+              </p>
+              <div class="card-actions flex justify-center">
+                <div></div>
+                <button class="btn btn-accent">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button, it will close the modal -->
+              <button class="btn btn-error">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- <div class="modal-box">
+  <h3 class="text-lg font-bold">Hello!</h3>
+  <p class="py-4">Press ESC key or click the button below to close</p>
+  <div class="modal-action">
+    <form method="dialog">
+     
+      <button class="btn">Close</button>
+    </form>
+  </div>
+</div> -->

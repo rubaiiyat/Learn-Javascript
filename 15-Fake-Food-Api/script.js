@@ -10,7 +10,7 @@ function displayData(data) {
   const totalFood = document.getElementById("totalFood");
   totalFood.innerText = data.length;
   data.forEach((recipes) => {
-    const price = Math.round(Math.random() * 20) + 5;
+    const price = Math.round(Math.random() * 15) + 5;
     const mainDiv = document.getElementById("mainDiv");
 
     const newDiv = document.createElement("div");
@@ -48,7 +48,7 @@ function displayData(data) {
         </div>
         <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white">$${price}</span>
-            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</a>
+            <button onclick='showDetails(${recipes.id})' class="btn btn-accent">Show Details</button>
         </div>
     </div>
     
@@ -56,4 +56,32 @@ function displayData(data) {
 
     mainDiv.appendChild(newDiv);
   });
+}
+
+function showDetails(id) {
+  fetch(`https://dummyjson.com/recipes/${id}`)
+    .then((res) => res.json())
+    .then((data) => modalData(data));
+}
+
+function modalData(data) {
+  my_modal_4.showModal();
+
+  const myModal = document.getElementById("my_modal_4");
+
+  const itemName = (document.getElementById("itemName").innerText = data.name);
+
+  const description = (document.getElementById("description").innerText =
+    data.instructions);
+
+  const rating = (document.getElementById("rating").innerText = data.rating);
+  const review = (document.getElementById("review").innerText =
+    data.reviewCount);
+  const tags = (document.getElementById("tags").innerText = data.tags);
+
+  const modalDiv = document.getElementById("modalDiv");
+
+  const img = document.getElementById("myImg");
+  img.src = data.image;
+  console.log(data);
 }
