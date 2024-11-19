@@ -1,15 +1,21 @@
 let showItemCount = 5;
 let allRecipe = [];
-function ourApi() {
-  fetch("https://dummyjson.com/recipes")
-    .then((res) => res.json())
-    .then((data) => {
-      allRecipe = data.recipes;
-      displayData();
-    });
-}
-
-ourApi();
+let searchRecipe = [];
+document.getElementById("searchBtn").addEventListener("click", function () {
+  const searchValue = document.getElementById("default-search").value;
+  const errorText = document.getElementById("ErrorText");
+  if (!searchValue == "") {
+    fetch(`https://dummyjson.com/recipes/search?q=${searchValue}`)
+      .then((res) => res.json())
+      .then((data) => {
+        allRecipe = data.recipes;
+        displayData();
+      });
+    errorText.innerText = "";
+  } else {
+    errorText.innerText = "No Item Found . Please Enter Valid Input";
+  }
+});
 
 function displayData() {
   const totalFood = document.getElementById("totalFood");
@@ -108,3 +114,14 @@ function modalData(data) {
   img.src = data.image;
   console.log(data);
 }
+/* 
+document.getElementById("searchBtn").addEventListener("click", function () {
+  const searchValue = document
+    .getElementById("default-search")
+    .value.toLowerCase();
+
+  allRecipe.forEach((recipe) => {
+    const filtervalue = recipe.name.filter(searchValue);
+    console.log(filtervalue);
+  });
+}); */
