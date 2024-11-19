@@ -1,21 +1,27 @@
+let showItemCount = 5;
+let allRecipe = [];
 function ourApi() {
   fetch("https://dummyjson.com/recipes")
     .then((res) => res.json())
-    .then((data) => displayData(data.recipes));
+    .then((data) => {
+      allRecipe = data.recipes;
+      displayData();
+    });
 }
 
 ourApi();
-let showItemCount = 5;
-function displayData(data) {
+
+function displayData() {
   const totalFood = document.getElementById("totalFood");
-  totalFood.innerText = data.length;
-  data = data.slice(0, showItemCount);
+  totalFood.innerText = allRecipe.length;
+
+  const limitedData = allRecipe.slice(0, showItemCount);
 
   console.log(showItemCount);
-
-  data.forEach((recipes) => {
+  const mainDiv = document.getElementById("mainDiv");
+  mainDiv.innerHTML = "";
+  limitedData.forEach((recipes) => {
     const price = Math.round(Math.random() * 15) + 5;
-    const mainDiv = document.getElementById("mainDiv");
 
     const newDiv = document.createElement("div");
     newDiv.classList =
@@ -66,10 +72,13 @@ document
   .getElementById("showMoreItemBtn")
   .addEventListener("click", function () {
     showItemCount += 5;
-
-    fetch("https://dummyjson.com/recipes")
-      .then((res) => res.json())
-      .then((data) => displayData(data.recipes));
+    const errorText = document.getElementById("ErrorText");
+    if (showItemCount < allRecipe.length) {
+      displayData();
+      errorText.innerText = "";
+    } else {
+      errorText.innerText = "No more items to display!";
+    }
   });
 
 function showDetails(id) {
