@@ -3,7 +3,7 @@ function loadData() {
     .then((res) => res.json())
     .then((data) => displayData(data));
 }
-
+loadData();
 function displayData(data) {
   for (const product of data) {
     const productList = document.getElementById("productList");
